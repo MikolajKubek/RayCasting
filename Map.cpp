@@ -1,5 +1,5 @@
 #include "Map.hpp"
-
+#include <iostream>
 using namespace RC;
 
 Map::Map(int width, int height)

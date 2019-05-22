@@ -15,7 +15,7 @@ using namespace RC;
 
 int main(){
     Map map(800, 800);
-    Actor actor(10, 10, 90, 0);
+    Actor actor(10, 10, 90, 0, map);
     View view(800, 800);
     Raycaster rc;
 

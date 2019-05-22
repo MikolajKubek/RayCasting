@@ -1,7 +1,7 @@
 CC = g++
 
 all: main.o Map.o View.o Actor.o Raycaster.o
-	$(CC) main.o Map.o View.o Actor.o Raycaster.o -lsfml-graphics -lsfml-window -lsfml-system -g
+	$(CC) main.o Map.o View.o Actor.o Raycaster.o -lsfml-graphics -lsfml-window -lsfml-system -g -o raycasting
 
 main.o: main.cpp Map.hpp Actor.hpp View.hpp Raycaster.hpp
 	$(CC) main.cpp -c -o main.o
@@ -20,4 +20,4 @@ Raycaster.o: Raycaster.cpp Raycaster.hpp Map.hpp Actor.hpp View.hpp
 
 
 clean: 
-	rm -f *.o
+	rm -f *.o raycasting

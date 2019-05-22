@@ -3,30 +3,55 @@
 
 using namespace RC;
 
-Actor::Actor(int x, int y, int view_angle, double heading)
-    : m_x(x), m_y(y),  m_view_angle(view_angle), m_heading(heading){}
+Actor::Actor(int x, int y, int view_angle, double heading, Map map)
+    : m_x(x), m_y(y),  m_view_angle(view_angle), m_heading(heading), m_map(map){}
 
 void Actor::move(direction direction){
+    int step_lengh = 1;
+    int x = m_x;
+    int y = m_y;
     switch (direction)
     {
     case UP:
-        m_y--;
+        while(x == m_x && y == m_y){
+            x = floor(m_x + step_lengh*cos(m_heading * M_PI / 180));
+            y = floor(m_y + step_lengh*sin(m_heading * M_PI / 180));
+            step_lengh++;
+        }
         break;
 
     case DOWN:
-        m_y++;
+        while(x == m_x && y == m_y){
+            x = floor(m_x + step_lengh*cos((m_heading + 180) * M_PI / 180));
+            y = floor(m_y + step_lengh*sin((m_heading + 180)  * M_PI / 180));
+        step_lengh++;
+        }
+
         break;
     
     case LEFT:
-        m_x--;
+        while(x == m_x && y == m_y){
+            x = floor(m_x + step_lengh*cos((m_heading - 90) * M_PI / 180));
+            y = floor(m_y + step_lengh*sin((m_heading - 90)  * M_PI / 180));
+        step_lengh++;
+        }
         break;
 
     case RIGHT:
-        m_x++;
+        while(x == m_x && y == m_y){
+            x = floor(m_x + step_lengh*cos((m_heading + 90) * M_PI / 180));
+            y = floor(m_y + step_lengh*sin((m_heading + 90)  * M_PI / 180));
+        step_lengh++;
+        }
         break;
     
     default:
         break;
+    }
+
+    if(x < m_map.getWidth() && y < m_map.getHeight() && m_map.get(x, y) == 0){
+        m_x = x;
+        m_y = y;
     }
 }
 
@@ -84,6 +109,15 @@ point_t Actor::get_position(){
     point.y = m_y;
 
     return point;
+}
+
+int Actor::get_x(){
+    return m_x;
+}
+
+
+int Actor::get_y(){
+    return m_y;
 }
 
 int Actor::get_angle(){
