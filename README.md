@@ -1,0 +1,1 @@
+Generowanie perspektywy 3D na podstawie macierzy, będącej rzutem z góry żądanej perspektywy. Po wygenerowanej mapie można poruszać się przy pomocy klawiszy strzałek oraz 'A' (obrót kamery w lewo) i 'D' (obrót kamery w prawo).

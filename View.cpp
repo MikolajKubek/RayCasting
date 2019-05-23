@@ -50,16 +50,16 @@ void View::checkEvents(std::list<int> *keys, std::list<point_t> *points)
 
 void View::clear()
 {
-    window.clear(sf::Color(0, 25, 0, 255));
+    window.clear(sf::Color(0, 150, 0, 255));
     sf::VertexArray up(sf::Quads, 4);
     up[0].position = sf::Vector2f(0.0, 50.0);
-    up[0].color = sf::Color(0, 0, 50, 255);
+    up[0].color = sf::Color(0, 80, 150, 255);
     up[1].position = sf::Vector2f(100.0, 50.0);
-    up[1].color = sf::Color(0, 0, 50, 255);
+    up[1].color = sf::Color(0, 80, 150, 255);
     up[2].position = sf::Vector2f(100.0, 0.0);
-    up[2].color = sf::Color(0, 0, 50, 255);
+    up[2].color = sf::Color(0, 80, 150, 255);
     up[3].position = sf::Vector2f(0.0, 0.0);
-    up[3].color = sf::Color(0, 0, 50, 255);
+    up[3].color = sf::Color(0, 80, 150, 255);
 
     window.draw(up);
 
@@ -71,9 +71,9 @@ void View::paint_line(double x1, double y1, double x2, double y2)
 
     sf::VertexArray line(sf::Lines, 2);
     line[0].position = sf::Vector2f(x1, y1);
-    line[0].color = sf::Color(color * 50, color * 255, color * 100, 255);
+    line[0].color = sf::Color(color * 250, color * 10, color * 100, 255);
     line[1].position = sf::Vector2f(x2, y2);
-    line[1].color = sf::Color(color * 50, color * 255, color * 100, 255);
+    line[1].color = sf::Color(color * 250, color * 10, color * 100, 255);
 
     window.draw(line);
 }
