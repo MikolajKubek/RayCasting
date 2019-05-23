@@ -1,11 +1,14 @@
+/*
+    Generowanie promieni pola widzenia aktora i rysowanie perspektywy na podstawie ich długości
+*/
 #include <math.h>
 
 #include "Actor.hpp"
 #include "Map.hpp"
 #include "View.hpp"
 
-namespace RC{
-    class Raycaster{
+namespace RC {
+    class Raycaster {
         public:
             Raycaster();
 

@@ -13,14 +13,14 @@
 
 using namespace RC;
 
-int main(){
+int main() {
     Map map(800, 800);
-    Actor actor(10, 10, 90, 0, map);
+    Actor actor(10, 10, 90, 0, &map);
     View view(800, 800);
     Raycaster rc;
 
-    for(int i = 0; i < map.getWidth(); i++){
-        for(int j = 0; j < map.getHeight(); j++){
+    for (int i = 0; i < map.getWidth(); i++) {
+        for (int j = 0; j < map.getHeight(); j++) {
             map.set(i, j, (rand()%50 == 0));
         }
     }
@@ -28,7 +28,7 @@ int main(){
     std::list<int> keys;
     std::list<point_t> clicked_points;
 
-    while(view.isOpen()){
+    while (view.isOpen()) {
 
         view.checkEvents(&keys, &clicked_points);
         actor.processEvents(&keys);

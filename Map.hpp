@@ -1,3 +1,6 @@
+/*
+    Rzut z góry, zawierający informacje o obiektach 
+*/
 #ifndef MAP_H
 #define MAP_H
 
@@ -15,7 +18,7 @@ namespace RC {
     };
     #endif
 
-    class Map{
+    class Map {
         public:
             Map(int width, int height);
 

@@ -1,10 +1,13 @@
+/*
+    Wyświetlanie i odczytywanie interakcji z użytkownikiem
+*/
 #ifndef VIEW_H
 #define VIEW_H
 
 #include <SFML/Graphics.hpp>
 #include <list>
 
-namespace RC{
+namespace RC {
 
     #ifndef POINT
     #define POINT    
@@ -15,7 +18,7 @@ namespace RC{
     };
     #endif
 
-    class View{
+    class View {
         public:
             sf::RenderWindow window {sf::VideoMode(100, 100), "my window"};
 
