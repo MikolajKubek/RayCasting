@@ -6,39 +6,40 @@
 
 #include <list>
 
-namespace RC {
+namespace RC
+{
 
+#ifndef POINT
+#define POINT
+struct point_t
+{
+    double x;
+    double y;
+};
+#endif
 
-    #ifndef POINT
-    #define POINT    
-    struct point_t
-    {
-        double x;
-        double y;
-    };
-    #endif
+class Map
+{
+public:
+    Map(int width, int height);
 
-    class Map {
-        public:
-            Map(int width, int height);
+    int get(int x, int y);
 
-            int get(int x, int y);
+    void set(int x, int y, int value);
 
-            void set(int x, int y, int value);
+    void processEvents(std::list<point_t> *points);
 
-            void processEvents(std::list<point_t>* points);
+    void clear();
 
-            void clear();
+    int getWidth();
 
-            int getWidth();
+    int getHeight();
 
-            int getHeight();
-
-        private:
-            int m_width;
-            int m_height;
-            int** m_map;
-    };
-}
+private:
+    int m_width;
+    int m_height;
+    int **m_map;
+};
+} // namespace RC
 
 #endif
