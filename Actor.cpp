@@ -7,46 +7,29 @@ Actor::Actor(double x, double y, int view_angle, double heading, Map *map)
 
 void Actor::move(direction direction)
 {
-    int step_lengh = 1;
+    double step_lengh = 0.5;
     double x = m_x;
     double y = m_y;
     switch (direction)
     {
     case UP:
-        while (x == m_x && y == m_y)
-        {
             x = m_x + step_lengh * cos(m_heading * M_PI / 180);
             y = m_y + step_lengh * sin(m_heading * M_PI / 180);
-            step_lengh++;
-        }
         break;
 
     case DOWN:
-        while (x == m_x && y == m_y)
-        {
             x = m_x + step_lengh * cos((m_heading + 180) * M_PI / 180);
-            y = m_y + step_lengh * sin((m_heading + 180) * M_PI / 180);
-            step_lengh++;
-        }
-
+            y = m_y + step_lengh * sin((m_heading + 180) * M_PI / 180);   
         break;
 
     case LEFT:
-        while (x == m_x && y == m_y)
-        {
             x = m_x + step_lengh * cos((m_heading - 90) * M_PI / 180);
             y = m_y + step_lengh * sin((m_heading - 90) * M_PI / 180);
-            step_lengh++;
-        }
         break;
 
     case RIGHT:
-        while (x == m_x && y == m_y)
-        {
             x = m_x + step_lengh * cos((m_heading + 90) * M_PI / 180);
             y = m_y + step_lengh * sin((m_heading + 90) * M_PI / 180);
-            step_lengh++;
-        }
         break;
 
     default:

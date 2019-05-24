@@ -6,6 +6,11 @@
 
 #include <list>
 
+/*
+    TODO:
+    destructor
+*/
+
 namespace RC
 {
 
@@ -22,14 +27,14 @@ class Map
 {
 public:
     Map(int width, int height);
+    
+    ~Map();
 
     int get(int x, int y);
 
     void set(int x, int y, int value);
 
     void processEvents(std::list<point_t> *points);
-
-    void clear();
 
     int getWidth();
 

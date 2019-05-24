@@ -36,7 +36,7 @@ int main()
     {
 
         view.checkEvents(&keys, &clicked_points);
-
+        
         if (keys.size() > 0)
         {
             actor.processEvents(&keys);
@@ -47,8 +47,6 @@ int main()
         }
         view.display();
     }
-
-    map.clear();
 
     return 0;
 }

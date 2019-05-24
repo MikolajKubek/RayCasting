@@ -13,6 +13,15 @@ Map::Map(int width, int height)
     }
 }
 
+Map::~Map()
+{
+    for (int i = 0; i < m_width; i++)
+    {
+        delete[] m_map[i];
+    }
+    delete[] m_map;
+}
+
 int Map::get(int x, int y)
 {
     if (x >= 0 && x < m_width && y >= 0 && y < m_height)
@@ -39,15 +48,6 @@ void Map::processEvents(std::list<point_t> *points)
         point = points->front();
         points->pop_front();
     }
-}
-
-void Map::clear()
-{
-    for (int i = 0; i < m_width; i++)
-    {
-        delete[] m_map[i];
-    }
-    delete[] m_map;
 }
 
 int Map::getWidth()
