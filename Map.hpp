@@ -34,7 +34,7 @@ public:
 
     void set(int x, int y, int value);
 
-    void processEvents(std::list<point_t> *points);
+    void processEvents(std::list<point_t> *points);/*możliwość dodania interakcji z otoczeniem*/
 
     int getWidth();
 
@@ -45,6 +45,6 @@ private:
     int m_height;
     int **m_map;
 };
-} // namespace RC
+} 
 
 #endif

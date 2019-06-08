@@ -1,3 +1,4 @@
 .vscode/
 raycasting
 *.o
+.gitignore

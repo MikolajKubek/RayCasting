@@ -5,7 +5,7 @@ using namespace RC;
 Map::Map(int width, int height)
     : m_width(width), m_height(height)
 {
-    m_map = new int *[width]; /*zmienic na std::shared_ptr*/
+    m_map = new int *[width]; 
 
     for (int i = 0; i < width; i++)
     {
@@ -29,7 +29,7 @@ int Map::get(int x, int y)
         return m_map[x][y];
     }
 
-    return 0;
+    return -1;
 }
 
 void Map::set(int x, int y, int value)
