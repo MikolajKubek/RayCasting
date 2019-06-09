@@ -1,4 +1,4 @@
-# Wymagane biblioteki: # (dostępne jako pakiety ubuntu)
+# Wymagane biblioteki: (dostępne jako pakiety ubuntu)
 * [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/) / *libsfml-dev*
 * [Google Test](https://github.com/google/googletest) / *libgtest-dev*
 
