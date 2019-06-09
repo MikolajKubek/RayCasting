@@ -89,11 +89,12 @@ void View::paint_line(double x1, double y1, double x2, double y2, int color_inde
     mul > 1 ? mul = 1 : true;
 
     sf::Color color;
-    if(color_index > m_colors.size()){
-        color = sf::Color(0, 0, 0, 0);
+
+    if(color_index == -1){
+        color = sf::Color(255, 255, 255, 255);
     }
-    else if(color_index == -1){
-        color = sf::Color(255, 255, 255, 0);
+    else if(color_index > m_colors.size()){
+        color = sf::Color(0, 0, 0, 0);
     }
     else{
         color = m_colors[color_index - 1];

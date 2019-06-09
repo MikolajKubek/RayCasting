@@ -17,6 +17,19 @@ struct map_test_parameters
 
     int value;
     int expected_value;
+
+
+    friend std::ostream& operator<<(std::ostream& os, const map_test_parameters& obj){
+        return os
+            << std::endl
+            << "wysokość mapy: " << obj.height << std::endl
+            << "szerokość mapy: " << obj.width << std::endl
+            << "X: " << obj.x << std::endl
+            << "Y: " << obj.y << std::endl            
+            << "ustawiana wartość: " << obj.value << std::endl
+            << "oczekiwana wartość: " << obj.expected_value << std::endl;
+
+    }
 };
 
 struct MapTest : testing::Test
